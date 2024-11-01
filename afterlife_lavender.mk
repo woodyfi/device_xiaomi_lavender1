@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2018-2019 The AfterlifeOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,13 +8,24 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AfterlifeOS stuff
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
+
+# AfterEcho (Dolby)
+TARGET_USE_ECHO := true
+# Blur
+TARGET_SUPPORTS_BLUR := true
+# GApps
+AFTERLIFE_GAPPS := false
+# Maintainer
+AFTERLIFE_MAINTANER := sweetbtrfly
+# Faceunlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_NAME := lineage_lavender
+PRODUCT_NAME := afterlife_lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := lavender
 PRODUCT_MANUFACTURER := Xiaomi
